@@ -12,8 +12,9 @@ services:
       - /nextcloud/mariadb:/var/lib/mysql
 
   app:
-    build: .
-    pull_policy: build
+    #build: .
+    #pull_policy: build
+    image: nextcloud:25.0.6-fpm-smb
     restart: always
     links:
       - db
@@ -24,8 +25,9 @@ services:
       - /nextcloud/custom_apps:/var/www/html/custom_apps
  
   cron:
-    build: .
-    pull_policy: build
+    #build: .
+    #pull_policy: build
+    image: nextcloud:25.0.6-fpm-smb
     restart: always
     volumes:
       - nextcloud:/var/www/html:z
