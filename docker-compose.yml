@@ -23,15 +23,16 @@ services:
 
       - SMTP_SECURE=tls
 
-      - SMTP_AUTHTYPE=PLAIN
+      - SMTP_AUTHTYPE=LOGIN
 
-      - SMTP_NAME=stefan@pinter-net.at
+      - SMTP_NAME=nextcloud@pinter-net.at
+      - SMTP_PORT=587
 
       - SMTP_PASSWORD=Bbbsacr3dpwlapW
 
       - MAIL_FROM_ADDRESS=nextcloud
 
-      - MAIL_DOMAIN=pinter-ner.at
+      - MAIL_DOMAIN=pinter-net.at
       - PHP_MEMORY_LIMIT=1024M
       - PHP_UPLOAD_LIMIT=8192M
     volumes:
