@@ -20,18 +20,12 @@ services:
       - db
     environment:
       - SMTP_HOST=smtp.pinter-net.at
-
       - SMTP_SECURE=tls
-
       - SMTP_AUTHTYPE=LOGIN
-
       - SMTP_NAME=nextcloud@pinter-net.at
       - SMTP_PORT=587
-
       - SMTP_PASSWORD=${MAILPW}
-
       - MAIL_FROM_ADDRESS=nextcloud
-
       - MAIL_DOMAIN=pinter-net.at
       - PHP_MEMORY_LIMIT=1024M
       - PHP_UPLOAD_LIMIT=8192M
