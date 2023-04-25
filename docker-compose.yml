@@ -19,6 +19,19 @@ services:
     links:
       - db
     environment:
+      - SMTP_HOST=smtp.pinter-net.at
+
+      - SMTP_SECURE=tls
+
+      - SMTP_AUTHTYPE=PLAIN
+
+      - SMTP_NAME=stefan@pinter-net.at
+
+      - SMTP_PASSWORD=Bbbsacr3dpwlapW
+
+      - MAIL_FROM_ADDRESS=nextcloud
+
+      - MAIL_DOMAIN=pinter-ner.at
       - PHP_MEMORY_LIMIT=1024M
       - PHP_UPLOAD_LIMIT=8192M
     volumes:
