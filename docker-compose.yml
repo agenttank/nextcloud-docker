@@ -28,7 +28,7 @@ services:
       - SMTP_NAME=nextcloud@pinter-net.at
       - SMTP_PORT=587
 
-      - SMTP_PASSWORD=Bbbsacr3dpwlapW
+      - SMTP_PASSWORD=${MAILPW}
 
       - MAIL_FROM_ADDRESS=nextcloud
 
