@@ -11,7 +11,7 @@ services:
     volumes:
       - /nextcloud/mariadb:/var/lib/mysql
     env_file:
-      - stack.env
+      - ../stack.env
 
   app:
     build: .
@@ -26,7 +26,7 @@ services:
       - /nextcloud/config:/var/www/html/config
       - /nextcloud/custom_apps:/var/www/html/custom_apps
     env_file:
-      - stack.env
+      - ../stack.env
  
   cron:
     image: nextcloud:${NEXTCLOUDTAG}-smb
@@ -40,7 +40,7 @@ services:
     depends_on:
       - db
     env_file:
-      - stack.env
+      - ../stack.env
 
 
   web:
