@@ -14,7 +14,7 @@ services:
   app:
     build: .
     pull_policy: build
-    image: nextcloud:25.0.6-fpm-smb
+    image: nextcloud:26.0.1-fpm-smb
     restart: always
     links:
       - db
@@ -30,7 +30,7 @@ services:
   cron:
     build: .
     pull_policy: build
-    image: nextcloud:25.0.6-fpm-smb
+    image: nextcloud:26.0.1-fpm-smb
     restart: always
     volumes:
       - nextcloud:/var/www/html:z
