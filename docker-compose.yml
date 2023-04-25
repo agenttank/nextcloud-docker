@@ -24,19 +24,20 @@ services:
       - /nextcloud/config:/var/www/html/config
       - /nextcloud/custom_apps:/var/www/html/custom_apps
  
-#  cron:
-#    build: .
- #   pull_policy: build
-  #  image: nextcloud:25.0.6-fpm-smb
-  #  restart: always
- #   volumes:
- #     - nextcloud:/var/www/html:z
- #     - /nextcloud/data:/var/www/html/data
-  #    - /nextcloud/config:/var/www/html/config
- #     - /nextcloud/custom_apps:/var/www/html/custom_apps
- #   entrypoint: /cron.sh
-#    depends_on:
- #     - db
+  cron:
+
+
+
+    image: nextcloud:25.0.6-fpm-smb
+    restart: always
+    volumes:
+      - nextcloud:/var/www/html:z
+      - /nextcloud/data:/var/www/html/data
+      - /nextcloud/config:/var/www/html/config
+      - /nextcloud/custom_apps:/var/www/html/custom_apps
+    entrypoint: /cron.sh
+    depends_on:
+      - db
 
 
   web:
