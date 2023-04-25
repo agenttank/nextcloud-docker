@@ -10,6 +10,8 @@ services:
     command: --transaction-isolation=READ-COMMITTED --disable_log_bin
     volumes:
       - /nextcloud/mariadb:/var/lib/mysql
+    env_file:
+      - stack.env
 
   app:
     build: .
@@ -23,6 +25,8 @@ services:
       - /nextcloud/data:/var/www/html/data
       - /nextcloud/config:/var/www/html/config
       - /nextcloud/custom_apps:/var/www/html/custom_apps
+    env_file:
+      - stack.env
  
   cron:
     image: nextcloud:${NEXTCLOUDTAG}-smb
@@ -35,6 +39,8 @@ services:
     entrypoint: /cron.sh
     depends_on:
       - db
+    env_file:
+      - stack.env
 
 
   web:
