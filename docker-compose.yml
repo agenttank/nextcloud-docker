@@ -18,6 +18,9 @@ services:
     restart: always
     links:
       - db
+    environment:
+        PHP_MEMORY_LIMIT=1024M
+        PHP_UPLOAD_LIMIT=8192M
     volumes:
       - nextcloud:/var/www/html:z
       - /nextcloud/data:/var/www/html/data
