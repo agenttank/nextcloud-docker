@@ -1,5 +1,5 @@
 *
-!stack.env
+!.env
 !/docker-compose.yml
 !/Dockerfile
 !nginx/
