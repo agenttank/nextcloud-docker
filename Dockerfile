@@ -1,4 +1,4 @@
-FROM nextcloud:25.0.6-fpm
+FROM nextcloud:26.0.1-fpm
 
 RUN apt update
 RUN apt install -y smbclient
