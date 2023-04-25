@@ -25,6 +25,8 @@ services:
       - /nextcloud/custom_apps:/var/www/html/custom_apps
  
   cron:
+    build: .
+    pull_policy: build
     image: nextcloud:25.0.6-fpm-smb
     restart: always
     volumes:
