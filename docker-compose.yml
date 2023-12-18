@@ -29,6 +29,17 @@ services:
       - MAIL_DOMAIN=pinter-net.at
       - PHP_MEMORY_LIMIT=1024M
       - PHP_UPLOAD_LIMIT=8192M
+    command: >-
+      sh -c '
+        {
+          echo pm=dynamic;
+          echo pm.max_children=120;
+          echo pm.start_servers=12;
+          echo pm.min_spare_servers=6;
+          echo pm.max_spare_servers=18;
+        } >> /usr/local/etc/php-fpm.d/www.conf;
+        exec /entrypoint.sh php-fpm
+      '
     volumes:
       - nextcloud:/var/www/html:z
       - /nextcloud/data:/var/www/html/data
