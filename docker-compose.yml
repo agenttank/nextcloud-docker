@@ -27,7 +27,7 @@ services:
       - SMTP_PASSWORD=${MAILPW}
       - MAIL_FROM_ADDRESS=nextcloud
       - MAIL_DOMAIN=pinter-net.at
-      - PHP_MEMORY_LIMIT=2048M
+      - PHP_MEMORY_LIMIT=6144M
       - PHP_UPLOAD_LIMIT=8192M
     command: >-
       sh -c '
